@@ -28,12 +28,12 @@ def forwardprop(X, w_1, w_2):
     Forward-propagation.
     IMPORTANT: yhat is not softmax since TensorFlow's softmax_cross_entropy_with_logits() does that internally.
     """
-    h    = tf.nn.sigmoid(tf.matmul(X, w_1))  # The \sigma function
-    yhat = tf.matmul(h, w_2)  # The \varphi function
+    h    = tf.nn.sigmoid(tf.matmul(X, w_1))  
+    yhat = tf.matmul(h, w_2)  
     return yhat
 
 def get_mnist_data():
-    """ Read the iris data set and split them into training and test sets """
+    
 
     root_dir =  os.getcwd()
     data_dir = os.path.join(root_dir,'data')
@@ -46,10 +46,6 @@ def get_mnist_data():
     
     train = pd.read_csv(os.path.join(data_dir, 'train.csv'))
     test = pd.read_csv(os.path.join(data_dir, 'test.csv'))
-    
-    #sample_submission = pd.read_csv(os.path.join(data_dir, 'sample_submission.csv'))
-    
-    #train.head()
     
     train = np.array(train)
     test = np.array(test)
@@ -83,16 +79,16 @@ def get_mnist_data():
 def main():
     train_X, test_X, train_y, test_y = get_mnist_data()
 
-    # Layer's sizes
+    
     x_size = train_X.shape[1]   # Number of input nodes: 784 features and 1 bias
     h_size = 256 #256                # Number of hidden nodes
-    y_size = train_y.shape[1]   # Number of outcomes 9 possible outcomes
+    y_size = train_y.shape[1]   # Number of outcomes 10 possible outcomes
 
-    # Symbols
+    
     X = tf.placeholder("float", shape=[None, x_size])
     y = tf.placeholder("float", shape=[None, y_size])
 
-    # Weight initializations
+    
     w_1 = init_weights((x_size, h_size))
     w_2 = init_weights((h_size, y_size))
 
@@ -106,7 +102,7 @@ def main():
     cost    = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=yhat))
     updates = tf.train.GradientDescentOptimizer(0.001).minimize(cost)
 
-    # Run SGD
+    # Run session
     sess = tf.Session()
     init = tf.initialize_all_variables()
     #init = tf.global_variables_initializer()
