@@ -8,8 +8,6 @@ Created on Sun May  7 20:47:53 2017
 import os
 import numpy as np
 import pandas as pd
-from scipy.misc import imread
-from sklearn.metrics import accuracy_score
 import tensorflow as tf
 
 # To stop potential randomness
