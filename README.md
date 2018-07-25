@@ -1,4 +1,4 @@
-# MNIST Digit Recognition * 
+# MNIST Digit Recognition - Basic ML Project to learn CNN 
 
 The data has been downloaded from [here](https://pjreddie.com/projects/mnist-in-csv/). Training data consists of 60k digits each with its own digit label. While testinng data consists of 10k digits. Task is to predict the label  for test dataset.
 
