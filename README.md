@@ -3,9 +3,9 @@
 The data has been downloaded from [here](https://pjreddie.com/projects/mnist-in-csv/). Training data consists of 60k digits each with its own digit label. While testinng data consists of 10k digits. Task is to predict the label  for test dataset.
 
 * Training data:
-  * Number of examples: 60K
+  * Number of examples: 60K number of images.
 * Testing data:
-  * Number of examples: 10K
+  * Number of examples: 10K number of images.
 
 * ### Single Layer Perceptron Model
 
