@@ -111,3 +111,7 @@ While Following is the accuracy in the last epochs
  Epoch =49 ,Cost=240543  
  Epoch =50 ,Cost=269753, Train Accuracy = 99.71, Test correct = 9844, Test Accuracy = 98.44  
 
+
+## Thank You. 
+## By - Anand Namdev (anand.nitb19@gmail.com)
+
